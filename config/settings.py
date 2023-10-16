@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 1234
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -54,9 +54,9 @@ INSTALLED_APPS = [
 
     'mailling',
     'client',
-    'django_apscheduler',
     'users',
     'blog',
+    'django_apscheduler',
 ]
 
 MIDDLEWARE = [
@@ -96,9 +96,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'NAME': 'course_work_6',
+        'USER': 'postgres',
+        'PASSWORD': 'tankist230101',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -152,7 +154,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_HOST = 'bolokan2014@gmail.com'
-EMAIL_PORT = 2525
+EMAIL_PORT = 5432
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
